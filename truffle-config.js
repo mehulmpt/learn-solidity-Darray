@@ -1,17 +1,29 @@
 module.exports = {
-	networks: {},
+  networks: {},
 
-	// Set default mocha options here, use special reporters etc.
-	mocha: {
-		useColors: false,
-		reporter: 'mochawesome',
-		reporterOptions: {
-			reportFilename: process.env.UNIT_TEST_OUTPUT_FILE + '.json',
-			json: true,
-			html: false,
-		},
-	},
+  // Set default mocha options here, use special reporters etc.
+  mocha: {
+    useColors: false,
+    reporter: "mochawesome",
+    reporterOptions: {
+      reportFilename: process.env.UNIT_TEST_OUTPUT_FILE + ".json",
+      json: true,
+      html: false,
+    },
+  },
 
-	// Configure your compilers
-	compilers: {},
-}
+  // Configure your compilers
+  compilers: {
+    solc: {
+      version: "0.8.7", // Fetch exact version from solc-bin (default: truffle's version)
+      // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
+      // settings: {          // See the solidity docs for advice about optimization and evmVersion
+      //  optimizer: {
+      //    enabled: false,
+      //    runs: 200
+      //  },
+      //  evmVersion: "byzantium"
+      // }
+    },
+  },
+};
